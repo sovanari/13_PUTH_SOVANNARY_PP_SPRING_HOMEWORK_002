@@ -34,7 +34,7 @@ public class StudentController {
             @PathVariable("student-id") Long id) {
         Student student = studentService.getStudentById(id);
         return ResponseEntity.ok(
-                new ApiResponse<>(true, "200 OK", "Student retrieved successfully",
+                new ApiResponse<>(true, "200 OK", "Student successfully",
                         student, LocalDateTime.now())
         );
     }
@@ -66,7 +66,7 @@ public class StudentController {
             @RequestParam(defaultValue = "10") int size) {
         List<Student> students = studentService.getAllStudents(page, size);
         return ResponseEntity.ok(
-                new ApiResponse<>(true, "200 OK", "All students retrieved successfully",
+                new ApiResponse<>(true, "200 OK", "All students  successfully",
                         students, LocalDateTime.now())
         );
     }
